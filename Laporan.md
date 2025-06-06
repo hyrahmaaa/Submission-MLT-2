@@ -39,16 +39,24 @@ Metrik Kesamaan Kosinus: Kesamaan antar profil film yang telah diubah menjadi ve
 Metrik weighted_rating: Untuk memastikan rekomendasi yang diberikan tidak hanya relevan secara konten tetapi juga memiliki kualitas tinggi, metrik weighted_rating diimplementasikan. Metrik ini menggabungkan users_rating dengan votes untuk memberikan skor kualitas film yang lebih andal dan adil. 
 
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai jumlah data, kondisi data, dan informasi mengenai data yang digunakan. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
 
+Data yang diambil adalah data IMDb Indonesian Movies dari kaggle. Adapun data yang diambil adalah Terdapat lebih dari 1200+ Film Indonesia dalam dataset yang terdiri dari 11 kolom berisi informasi terkait setiap film. Rincian data berjumlah 1.272 data dengan 11 variabel. 
+URL : (https://www.kaggle.com/datasets/dionisiusdh/imdb-indonesian-movies)
 
+Variabel-variabel pada dataset adalah sebagai berikut:
+- 'title' : Judul lengkap dari film, ini identifikasi utama sebuah film.
+- 'year' : Tahun rilis film, menunjukkan kapan film tersebut pertama kali dipublikasikan atau ditayangkan.
+- 'description' : Ringkasan atau sinopsis cerita film, ini sangat penting untuk content-based filtering karena menjelaskan isi film secara detail.
+- 'genre' : Kategori atau jenis film berdasarkan tema, gaya, atau alur cerita.
+- 'rating' : Klasifikasi usia penonton atau tingkat kedewasaan konten film. Ini menunjukkan batasan usia minimum yang disarankan untuk menonton film tersebut berdasarkan isi (kekerasan, bahasa, tema dewasa, dll.).
+- 'user_rating' : Rata-rata penilaian yang diberikan pengguna (bukan kritikus profesional).
+- 'votes' : Jumlah total suara atau penilaian yang berkontribusi pada 'rating' atau 'users rating' sebuah film. Menunjukkan seberapa banyak orang yang telah memberikan penilaian. Semakin tinggi jumlah 'votes', semakin representatif 'rating' tersebut.
+- 'languages' : Bahasa utama yang digunakan dalam film.
+- 'directors' : Nama sutradara yang mengarahkan film. Sutradara adalah elemen penting dalam identifikasi gaya dan kualitas film.
+- 'actors' : Nama-nama aktor/aktris utama yang berperan dalam film. Kehadiran aktor tertentu bisa menjadi daya tarik bagi penonton.
+- 'runtime' : Durasi atau lama waktu film dalam satuan menit.
 
-Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
+**Rubrik/Kriteria Tambahan**:
 - Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data beserta insight atau exploratory data analysis.
 
 ## Data Preparation
@@ -69,12 +77,3 @@ Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk meny
 Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
 
 Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
-
-**---Ini adalah bagian akhir laporan---**
-
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
