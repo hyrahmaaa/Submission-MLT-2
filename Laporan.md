@@ -26,31 +26,22 @@ Untuk menjawab pertanyaan tersebut dan mengatasi permasalahan yang ada, proyek i
 
 **Solution Approach**:
 
-Untuk mencapai tujuan proyek dalam mengatasi kesulitan pengguna menemukan film yang relevan dan berkualitas tinggi, proyek ini mengadopsi pendekatan berbasis data dengan memanfaatkan kekuatan Machine Learning. Pendekatan solusi ini dirancang untuk secara sistematis mengidentifikasi preferensi konten film dan menyajikannya dalam format yang mudah diakses.
-
-Beberapa poin kunci dalam pendekatan solusi ini meliputi:
-
-Metodologi Content-Based Filtering
-
-Pemilihan Pendekatan: Sistem rekomendasi ini dibangun menggunakan metodologi Content-Based Filtering. Pendekatan ini dipilih karena efektivitasnya dalam merekomendasikan item berdasarkan atribut internalnya (seperti genre, sutradara, aktor, dan deskripsi film), yang sangat cocok dengan jenis data film yang tersedia.
+Untuk mencapai tujuan proyek dalam mengatasi kesulitan pengguna menemukan film yang relevan dan berkualitas tinggi, proyek ini mengadopsi pendekatan berbasis data dengan memanfaatkan kekuatan Machine Learning. Pendekatan solusi ini dirancang untuk secara sistematis mengidentifikasi preferensi konten film dan menyajikannya dalam format yang mudah diakses. Beberapa poin kunci dalam pendekatan solusi ini meliputi:
+1. Metodologi Content-Based Filtering
+Pemilihan Pendekatan: Sistem rekomendasi ini dibangun menggunakan metodologi Content-Based Filtering. Pendekatan ini dipilih karena efektivitasnya dalam merekomendasikan item berdasarkan atribut internalnya (seperti genre dan aktor), yang sangat cocok dengan jenis data film yang tersedia.
 Basis Rekomendasi: Rekomendasi didasarkan pada kesamaan profil konten antar film. Jika pengguna menyukai Film A, sistem akan mencari dan merekomendasikan Film B yang memiliki karakteristik konten yang serupa.
-Pengolahan Fitur Teks dan Vektorisasi Lanjut
-
-Ekstraksi Fitur Relevan: Fitur-fitur tekstual kunci seperti description, genre, directors, dan actors diidentifikasi sebagai atribut utama yang mendefinisikan konten sebuah film.
-Pembersihan dan Normalisasi: Setiap fitur teks menjalani proses pembersihan dan normalisasi yang cermat (misalnya, penghapusan karakter tidak relevan, lowercase, penanganan multi-kata dengan underscore) untuk memastikan kualitas data yang optimal dan konsisten.
+2. Pengolahan Fitur Teks dan Vektorisasi Lanjut
+Pengolahan Fitur Teks: Setiap fitur teks menjalani proses pre processing yang cermat (misalnya, penghapusan karakter tidak relevan, lowercase, penanganan multi-kata dengan underscore) untuk memastikan kualitas data yang optimal dan konsisten.
 Vektorisasi TF-IDF: Untuk mengubah data teks menjadi format numerik yang dapat dianalisis oleh algoritma, digunakan Term Frequency-Inverse Document Frequency (TF-IDF) Vectorizer. TF-IDF efektif dalam menangkap pentingnya kata-kata dalam profil masing-masing film relatif terhadap seluruh koleksi film.
-Perhitungan Kesamaan Konten
-
+3. Perhitungan Kesamaan Konten
 Metrik Kesamaan Kosinus: Kesamaan antar profil film yang telah diubah menjadi vektor numerik dihitung menggunakan Cosine Similarity. Metrik ini mengukur sudut antara dua vektor, di mana sudut yang lebih kecil menunjukkan kemiripan yang lebih tinggi. Hasilnya adalah matriks kesamaan yang menunjukkan seberapa mirip setiap film dengan setiap film lainnya.
-Prioritisasi Rekomendasi Berdasarkan Kualitas
-
-Metrik weighted_rating: Untuk memastikan rekomendasi yang diberikan tidak hanya relevan secara konten tetapi juga memiliki kualitas tinggi, metrik weighted_rating diimplementasikan. Metrik ini menggabungkan users_rating dengan votes untuk memberikan skor kualitas film yang lebih andal dan adil. Rekomendasi akhir akan diurutkan berdasarkan skor ini.
-Dengan pendekatan ini, proyek bertujuan untuk memberikan pengalaman penemuan film yang lebih cepat, relevan, dan berkualitas bagi pengguna, secara langsung menjawab goals yang telah ditetapkan.
+4. Prioritisasi Rekomendasi Berdasarkan Kualitas
+Metrik weighted_rating: Untuk memastikan rekomendasi yang diberikan tidak hanya relevan secara konten tetapi juga memiliki kualitas tinggi, metrik weighted_rating diimplementasikan. Metrik ini menggabungkan users_rating dengan votes untuk memberikan skor kualitas film yang lebih andal dan adil. 
 
 ## Data Understanding
 Paragraf awal bagian ini menjelaskan informasi mengenai jumlah data, kondisi data, dan informasi mengenai data yang digunakan. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
 
-Selanjutnya, uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
+
 
 Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
 - accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
