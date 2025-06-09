@@ -103,10 +103,24 @@ Tahapan ini membahas mengenai model sisten rekomendasi yang dibuat, adapun yang 
 - Top-5 recommendation judul film berdasarkan genre:
   ![image](https://github.com/user-attachments/assets/63a4a213-a9c7-43df-9f7b-b888cdeae754)
 - Top-5 recommendation judul film berdasarkan actors:
-<img width="430" alt="image" src="https://github.com/user-attachments/assets/a6895543-2913-428b-805f-722cf4622e40" />
+<img width="434" alt="image" src="https://github.com/user-attachments/assets/783827b2-d9c8-4233-b03c-fbb19eb47df3" />
+
 
 ## Evaluation
-Karena sistem rekomendasi content-based ini berfokus pada kesamaan fitur maka metrik evaluasi akan lebih berorientasi pada kualitas rekomendasi dan relevansi. Metrik yang digunakan adalah Top-N Accuracy dimana mengukur proporsi rekomendasi yang relevan di antara N rekomendasi teratas yang diberikan. Namun, ini dapat diukur secara kualitatif melalui sampling atau user testing. Dalam hal ini, dapat dinilai dari penulis.
+Karena sistem rekomendasi content-based ini berfokus pada kesamaan fitur maka metrik evaluasi akan lebih berorientasi pada kualitas rekomendasi dan relevansi. Metrik yang digunakan adalah Top-N Accuracy dimana mengukur proporsi rekomendasi yang relevan di antara N rekomendasi teratas yang diberikan. Namun, ini dapat diukur secara kuantitatif dengan Precision@K.
+Precision@K adalah metrik standar dan kuantitatif yang mengukur "Top-N Accuracy" tersebut. Adapun rumusnya:
+![image](https://github.com/user-attachments/assets/486c5067-4c5d-4fff-9101-ea65cafa79c7)
+Precision@K sangat baik untuk mengukur seberapa "bersih" daftar rekomendasi. Ini penting karena pengguna biasanya hanya melihat beberapa rekomendasi teratas. Agar memastikan sebagian besar dari yang mereka lihat adalah relevan.
+
+Adapun hasil darai Precision@K:
+1. Berdasarkan genre
+Precision@5 (berbasis genre) = 1.00:
+Ini berarti 100% (5 dari 5) film yang direkomendasikan dalam Top-5 memiliki genre yang sama dengan film input ('Milea (2020)').
+Artinya: Jika relevansi didefinisikan sebagai "berbagi genre utama yang sama", maka sistem rekomendasi berbasis genre ini bekerja dengan sangat baik untuk film 'Milea (2020)', menghasilkan rekomendasi yang sangat relevan berdasarkan genre.
+2. Berdasarkan actors
+Precision@5 (berbasis AKTOR) = 1.00:
+Ini adalah skor yang sempurna! Artinya, 100% (5 dari 5) film yang direkomendasikan dalam Top-5 ini dianggap "relevan" berdasarkan kriteria kesamaan aktor yang baru Anda definisikan (yaitu, memiliki setidaknya satu aktor yang sama dengan film input 'Milea (2020)').
+Ini menunjukkan bahwa sistem rekomendasi berbasis aktor Anda, ketika dievaluasi dengan kriteria yang sesuai, sangat efektif dalam menemukan film-film dengan aktor yang relevan untuk film input 'Milea (2020)'.
 
 Tujuan utama dari pengembangan model ini adalah untuk menghasilkan rekomendasi film yang relevan, beragam, dan menarik bagi pengguna, sehingga meningkatkan pengalaman mereka dalam menemukan film.
 
@@ -114,3 +128,4 @@ Tujuan utama dari pengembangan model ini adalah untuk menghasilkan rekomendasi f
 Berdasarkan problem statement dan tujuan, diperoleh hasil dari Machine Learning menggunakan TF-IDF Vectorizer dan Cosine Similarity bahwa 
 1. Dari hasil yang diperoleh sebagai rekomendasi film berdasarkan genre dan actors dapat mempercepat dan mempersonalisasi pencarian.
 2. Selain itu, dengan adanya 'weighted_rating' sebagai bobot dari 'users_Rating' dan 'votes' dapat meningkatkan penemuan konten relevan untuk memastikan rekomendasi yang diberikan adalah film-film berkualitas tinggi dan sesuai dengan minat pengguna.
+3. Hasil dari evaluasi metrik Precision@K menunjukkan hasil 1.00 pada kedua basis yaitu genre dan actors sehingga hal ini sangat bagus untuk sistem rekomendasi.
