@@ -97,11 +97,9 @@ Selain itu, juga memberikan bobot lebih pada rating film yang didukung oleh juml
 
 ## Modeling
 
-Tahapan ini membahas mengenai model sisten rekomendasi yang dibuat, adapun yang dipiih adalah Content-based Filtering. Dalam hal ini dilakukan modelling berdasarkan genre dan actors. Namun, secara langkah ini mirip yaitu dengan 2 hal. Berikut penjelasannya :
-
-2. Cosine Similarity : Setelah teks dikonversi menjadi vektor numerik menggunakan TF-IDF, diperlukan cara untuk mengukur seberapa mirip vektor-vektor ini. Tujuan teknik ini adalah mengukur kesamaan antara dua dokumen (film) berdasarkan representasi vektor TF-IDF mereka. Perhitungan Cosine Similarity menghasilkan matriks kesamaan di mana setiap sel [i, j] berisi skor kesamaan antara film i dan film j. Matriks ini adalah dasar untuk menemukan film-film yang paling mirip.
-
-Sajikan top-N recommendation sebagai output.
+Tahapan ini membahas mengenai model sisten rekomendasi yang dibuat, adapun yang dipiih adalah Content-based Filtering. Dalam hal ini dilakukan modelling berdasarkan genre dan actors. Berikut penjelasannya :
+1. Cosine Similarity : Setelah teks dikonversi menjadi vektor numerik menggunakan TF-IDF, diperlukan cara untuk mengukur seberapa mirip vektor-vektor ini. Tujuan teknik ini adalah mengukur kesamaan antara dua dokumen (film) berdasarkan representasi vektor TF-IDF mereka. Perhitungan Cosine Similarity menghasilkan matriks kesamaan di mana setiap sel [i, j] berisi skor kesamaan antara film i dan film j. Matriks ini adalah dasar untuk menemukan film-film yang paling mirip.
+2. Sajikan top-N recommendation sebagai output.
 - Top-5 recommendation judul film berdasarkan genre:
   ![image](https://github.com/user-attachments/assets/63a4a213-a9c7-43df-9f7b-b888cdeae754)
 - Top-5 recommendation judul film berdasarkan actors:
